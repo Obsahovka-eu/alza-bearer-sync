@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <meta charset="utf-8">
+  <style>
+    body { width: 320px; padding: 16px; font-family: -apple-system, sans-serif; font-size: 13px; background: #1a1a2e; color: #e0e0e0; margin: 0; }
+    h3 { margin: 0 0 12px; font-size: 15px; color: #7c83ff; }
+    .status { padding: 10px; border-radius: 8px; margin-bottom: 12px; }
+    .status.ok { background: #1b4332; border: 1px solid #2d6a4f; }
+    .status.no { background: #3d1c1c; border: 1px solid #6b2c2c; }
+    .field { display: flex; justify-content: space-between; margin: 4px 0; }
+    .field .label { color: #999; }
+    .field .value { font-family: monospace; color: #ccc; }
+    .token-preview { font-family: monospace; font-size: 11px; color: #888; word-break: break-all; margin: 8px 0; padding: 8px; background: #111; border-radius: 4px; }
+    button { width: 100%; padding: 8px; border: none; border-radius: 6px; cursor: pointer; font-size: 12px; font-weight: 600; margin-top: 4px; }
+    .btn-sync { background: #7c83ff; color: white; }
+    .btn-sync:hover { background: #6b72e8; }
+    .btn-clear { background: #333; color: #aaa; }
+    .btn-clear:hover { background: #444; }
+    .btn-sync:disabled { opacity: 0.5; cursor: not-allowed; }
+    .btn-copy { background: #2a4a5e; color: #9ecbff; }
+    .btn-copy:hover { background: #355d75; }
+    .btn-copy:disabled { opacity: 0.5; cursor: not-allowed; }
+    .msg { text-align: center; padding: 8px; font-size: 12px; border-radius: 4px; margin-top: 8px; }
+    .msg.ok { background: #1b4332; color: #6fcf97; }
+    .msg.err { background: #3d1c1c; color: #eb5757; }
+    .explorer-url { font-family: monospace; font-size: 11px; width: 100%; padding: 6px; border: 1px solid #444; border-radius: 4px; background: #111; color: #ccc; margin: 8px 0; box-sizing: border-box; resize: vertical; }
+  </style>
+</head>
+<body>
+  <h3>🔑 Alza Bearer Sync</h3>
+  <div id="status" class="status no"></div>
+
+  <button id="syncBtn" class="btn-sync" disabled>📤 Synchronizovat token do všech tabů</button>
+  <button id="copyBtn" class="btn-copy" disabled>📋 Zkopírovat token</button>
+  <button id="clearBtn" class="btn-clear">🗑️ Smazat token</button>
+  <div id="msg" class="msg" style="display:none"></div>
+
+  <script src="popup.js"></script>
+</body>
+</html>
